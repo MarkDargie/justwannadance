@@ -6,25 +6,26 @@ public abstract class EnemyBase : MonoBehaviour
 {
 
     private Animator animator;
+    protected PlayerCombat playerManager;
 
     [Header("Stats")]
-    public float maxHeelth;
+    public float maxHealth;
     public float currentHealth;
-    public float damageAmount;
+    public float basicAttackDamage;
+    public float lookRadius = 10f;
 
     [Header("Movement")]
     public float movementSpeed;
 
     // Start is called before the first frame update
-    void Start()
-    {
-        currentHealth = maxHeelth;
-    }
+    protected abstract void Start();
 
     // Update is called once per frame
     public abstract void Update();
 
-    public abstract void TakeDamage(float damage);
+    public abstract void TakeDamage(float damageAmount);
+
+    public abstract void BasicAttack();
 
     public void Die()
     {
