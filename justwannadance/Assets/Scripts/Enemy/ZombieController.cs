@@ -43,7 +43,7 @@ public class ZombieController : EnemyBase
     public override void TakeDamage(float damageAmount)
     {
         currentHealth -= damageAmount;
-        //Debug.Log("TAKE DAMAGE: " + damageAmount);
+        Debug.Log("TAKE DAMAGE: " + damageAmount);
         if (currentHealth < 0)
         {
             // die
